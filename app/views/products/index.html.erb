@@ -1,0 +1,24 @@
+<h1>Welcome to Rainforest</h1>
+
+<h2>We have been expecting you...</h2>
+
+<p>Here's what we have in stock right now</p>
+
+
+<table>
+  <tr>
+  <th>Product Name</th>
+  <th>Description</th>
+  <th>Price</th>
+</tr>
+<% @products.each do |product| %>
+  <tr>
+  <td><%= product[:name] %></td>
+  <td><%= product[:description] %></td>
+  <td><%= product[:price_in_cents] %></td>
+</tr>
+<% end %>
+</table>
+
+<p>
+<%= link_to "New Product", "/products/new" %>
