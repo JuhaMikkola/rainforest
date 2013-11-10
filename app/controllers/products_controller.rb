@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+
+  before_filter :ensure_logged_in, :only => [:show]
+
   def index
     @products = Product.all
   end
@@ -9,7 +12,7 @@ class ProductsController < ApplicationController
     if current_user
       @review = @product.reviews.build
     end
-    
+
   end
 
   def new
