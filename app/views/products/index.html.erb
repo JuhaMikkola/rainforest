@@ -1,9 +1,8 @@
-<h1>Welcome to Rainforest</h1>
+<center><h1>Welcome to Rainforest</h1></center>
 
 <h2>We have been expecting you...</h2>
 
 <p>Here's what we have in stock right now</p>
-
 <table>
 
   <tr>
@@ -14,7 +13,7 @@
 
 <% @products.each do |product| %>
   <tr>
-    <td><%= product[:name] %></td>
+    <td><%= link_to product.name, "/products/#{product.id}" %></td>
     <td><%= product[:description] %></td>
     <td><%= product.formatted_price %></td>
   </tr>
@@ -23,4 +22,5 @@
 </table>
 
 <p>
+
 <div id="bottomnav"><%= link_to "New Product", "/products/new" %></div>
